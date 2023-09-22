@@ -51,6 +51,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.zove.zchat.R.drawable.matrix
 import com.zove.zchat.ui.theme.ZchatTheme
+import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 import java.time.format.TextStyle
 
 class MainActivity : ComponentActivity() {
@@ -73,6 +74,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Messanger( modifier: Modifier = Modifier) {
+
+    val image = painterResource(id = R.drawable.matrix)
+
     Column {
         Card (modifier = Modifier
             .wrapContentWidth()
@@ -163,6 +167,11 @@ fun Messanger( modifier: Modifier = Modifier) {
             ) {
                 Text(modifier = Modifier,  color = Color.Black, fontSize = 10.sp, text = "03:03")
             }
+        }
+    }
+    Column (modifier = Modifier.padding(top = 350.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Row (modifier = Modifier){
+            Image(painter = image, contentDescription = null, modifier = Modifier.width(300.dp))
         }
     }
 }
